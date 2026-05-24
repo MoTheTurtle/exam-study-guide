@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +15,17 @@ public class MidtermPractice {
         x.add("banana");
         x.add("kiwi");
 
-        System.out.print(findLongestWord(x));
+        System.out.println(findLongestWord(x));
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("why",7);
+        map.put("hello",8);
+        map.put("brilliant" , 99);
+        map.put("world",15);
+        map.put("amazing", 17);
+
+        System.out.println(countLongWords(map));
+
 
     }
 
@@ -37,6 +48,8 @@ public class MidtermPractice {
         }
         return longestW; 
     }
+    //I had some syntax error, and writing the arrayList took a good amount of time cause i couldnt figure out why it wasnt working.
+    //i just for got i had to import it. 
 
     /**
      * Counts how many words are longer than 5 characters in the keys of a Map.
@@ -45,8 +58,15 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for(String key : map.keySet()){
+            if(5 < key.length()){
+                count++;
+            }
+        }
+        return count;
     }
+    //this one wasnt too bad, but i forgot how to pull the key to get key length. 
 
     /**
      * Finds the average of the floats in an array.
