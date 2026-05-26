@@ -16,6 +16,7 @@ public class MidtermPractice {
         x.add("kiwi");
 
         System.out.println(findLongestWord(x));
+        System.out.println(allStartWithA(x));
 
         Map<String, Integer> map = new HashMap<>();
         map.put("why",7);
@@ -28,8 +29,9 @@ public class MidtermPractice {
         System.out.println(countOddNumbers(map));
 
         float[] test ={1.5f, 3.5f, 2.0f, 3.0f};
+        int[] test2 = {2,3,6,9,15,3,2,68};
         System.out.println(findAverage(test));
-
+        System.out.println(allDivisibleBy3(test2));
 
     }
 
@@ -88,6 +90,8 @@ public class MidtermPractice {
         return average; 
     }
 
+    //this one i had no problems with, i think i just need to review floats and array, and how they work. 
+
     /**
      * Counts how many odd numbers there are in the values of a Map.
      * @param map a HashMap of String keys and Integer values
@@ -105,6 +109,7 @@ public class MidtermPractice {
         }
         return odd;
     }
+    // i understand what map, and how it has a key and value. I think i still get mixed up on the for loop and how to get the value and getting the key" 
 
     /**
      * Returns true if all values are divisible by 3 in an array.
@@ -114,8 +119,22 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        int count = 0; 
+        for(int i = 0; i <arr.length; i++){
+            if(arr[i]%3 != 0){
+            count++;
+            }
+
+        }
+        if(count> 0){
+            return false;
+        }
+        else {
+            return true; 
+        }
     }
+
+     // this one i was pretty confident in. 
 
     /**
      * Returns true if all words start with 'a' in an ArrayList of Strings.
@@ -125,8 +144,23 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        int x = 0;
+        for(String word : list){
+            if(word.charAt(0) != 'a' && word.charAt(0) != 'A'){
+                x++;
+            }
+
+        }
+
+        if(x>0){
+            return false;
+        }
+        else{
+            return true; 
+        }
+        
     }
+    // this one took me some time but i eventually got it.
 
     /**
      * OPTIONAL MORE CHALLENGING PROBLEM
