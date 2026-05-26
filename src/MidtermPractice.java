@@ -25,6 +25,7 @@ public class MidtermPractice {
         map.put("amazing", 17);
 
         System.out.println(countLongWords(map));
+        System.out.println(countOddNumbers(map));
 
         float[] test ={1.5f, 3.5f, 2.0f, 3.0f};
         System.out.println(findAverage(test));
@@ -94,7 +95,15 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int odd = 0;
+        for(String key: map.keySet()){
+            int value = map.get(key);
+            if(value %2 != 0) {
+                odd++;
+            }
+
+        }
+        return odd;
     }
 
     /**
